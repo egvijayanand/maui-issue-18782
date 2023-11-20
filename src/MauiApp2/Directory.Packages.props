@@ -1,0 +1,13 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageVersion Include="CommunityToolkit.Maui" Version="7.0.0" />
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    </ItemGroup>
+</Project>
