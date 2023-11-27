@@ -17,7 +17,13 @@
                 AccessKey="X"
                 ClassId="exit"
                 Clicked="OnMenuItemClicked"
-                Text="Exit" />
+                Text="Exit">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator
+                        Key="X"
+                        Modifiers="Alt" />
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </c:CustomMenuFlyoutItem>
         </c:CustomMenuBarItem>
         <c:CustomMenuBarItem
             AccessKey="H"
@@ -61,7 +67,7 @@
                     <c:CustomEntry
                         AccessKey="T"
                         HorizontalOptions="Center"
-                        Placeholder="Press Al+T to receive focus"
+                        Placeholder="Press Alt+T to receive focus"
                         Text=""
                         WidthRequest="200" />
 
