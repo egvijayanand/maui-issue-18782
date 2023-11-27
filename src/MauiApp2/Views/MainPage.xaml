@@ -58,6 +58,34 @@
                         Style="{StaticResource MauiLabel}"
                         Text="Welcome to .NET Multi-platform App UI" />
 
+                    <c:CustomEntry
+                        AccessKey="T"
+                        HorizontalOptions="Center"
+                        Placeholder="Press Al+T to receive focus"
+                        Text=""
+                        WidthRequest="200" />
+
+                    <VerticalStackLayout HorizontalOptions="Center">
+                        <HorizontalStackLayout>
+                            <c:CustomCheckBox AccessKey="A" />
+                            <Label
+                                Text="Apple"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <c:CustomCheckBox AccessKey="G" />
+                            <Label
+                                Text="Google"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <c:CustomCheckBox AccessKey="M" />
+                            <Label
+                                Text="Microsoft"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
                     <Label
                         x:Name="CounterLabel"
                         FontAttributes="Bold"
@@ -66,7 +94,8 @@
                         Style="{StaticResource MauiLabel}"
                         Text="Current count: 0" />
 
-                    <Button
+                    <c:CustomButton
+                        AccessKey="S"
                         Clicked="OnCounterClicked"
                         HorizontalOptions="Center"
                         SemanticProperties.Hint="Counts the number of times you click"
