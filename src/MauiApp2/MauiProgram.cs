@@ -21,6 +21,12 @@ namespace MauiApp2
 			builder.Logging.AddDebug();
 #endif
 
+			MapCustomHandlers();
+			return builder.Build();
+		}
+
+		private static void MapCustomHandlers()
+		{
 			MenuBarItemHandler.Mapper.ReplaceMapping(nameof(ICustomMenuBarItem.AccessKey), (IMenuBarItemHandler h, ICustomMenuBarItem v) =>
 			{
 #if WINDOWS
@@ -35,7 +41,26 @@ namespace MauiApp2
 #endif
 			});
 
-			return builder.Build();
+			EntryHandler.Mapper.ReplaceMapping(nameof(ICustomEntry.AccessKey), (IEntryHandler h, ICustomEntry v) =>
+			{
+#if WINDOWS
+				h.PlatformView.AccessKey = v.AccessKey;
+#endif
+			});
+
+			ButtonHandler.Mapper.ReplaceMapping(nameof(ICustomButton.AccessKey), (IButtonHandler h, ICustomButton v) =>
+			{
+#if WINDOWS
+				h.PlatformView.AccessKey = v.AccessKey;
+#endif
+			});
+
+			CheckBoxHandler.Mapper.ReplaceMapping(nameof(ICustomCheckBox.AccessKey), (ICheckBoxHandler h, ICustomCheckBox v) =>
+			{
+#if WINDOWS
+				h.PlatformView.AccessKey = v.AccessKey;
+#endif
+			});
 		}
 	}
 }
